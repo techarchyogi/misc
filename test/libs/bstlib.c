@@ -8,18 +8,18 @@
 node * insert ( node *root, node *curr, void *data, int (*fp)(void *, void *))
 {
 	node *n = NULL ;
-	printf ("Inserting \n" );
+	//printf ("Inserting \n" );
 	if ( NULL == curr ){
 		curr = (node *) malloc ( sizeof (node) );
 		curr->l = curr->r = NULL ;
 		curr->data = data ;
 		return curr ;
 	} else if ( fp(data, curr->data) == 1 ){
-		printf ("Go right \n");
+	//	printf ("Go right \n");
 		n = insert ( root, curr->r, data, fp) ;
 		if ( curr->r == NULL ) curr->r = n ;
 	} else if ( fp(data, curr->data) == 0 ){
-		printf ("Go left \n");
+	//	printf ("Go left \n");
 		n = insert ( root, curr->l, data, fp );
 		if ( curr->l == NULL ) curr->l = n ;
 	} 
