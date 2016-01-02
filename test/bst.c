@@ -30,7 +30,15 @@ void pre( node *n)
 	printf ( "%d ", n->val );
 	if ( n->l ) pre(n->l);
 }
-
+int search ( node *n, int val )
+{
+	if ( NULL == n ) return 0;
+	if ( val < n->val ) {	
+		search ( n->r, val ); 
+	} else if ( val > n->val ) {
+		search (n->l, val );
+	} else { return 1 ; } 
+}
 int main ( void )
 {
 	root = NULL ;
@@ -43,7 +51,11 @@ int main ( void )
 			scanf("%d", &v);
 			printf("inserting %d\n",v );
 			insert ( root, v);
+		} else if ( c == 's' ){
+			scanf("%d", &v);
+			printf ( "Found = %d\n",search(root, v)); 
 		}
 	}
 	pre(root);
 }
+
