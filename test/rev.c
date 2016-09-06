@@ -28,9 +28,9 @@ List * rev ( List * head )
 	List * tmp  = NULL ;
 	List * curr = head ;
 	List * prev = NULL ;
-    while ( curr )
+    	while ( curr )
 	{
-	    tmp = curr-> next ;
+	    	tmp = curr-> next ;
 		curr->next  = prev ;
 		prev = curr ;
 		curr = tmp ;
