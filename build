@@ -1,0 +1,3 @@
+gcc -c dslib.c
+ar cr libds.a dslib.o 
+gcc -o bt  btree.c libds.a
